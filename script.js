@@ -2,7 +2,6 @@ const menu = document.querySelector('.menu');
 const modeToggle = document.querySelector('#mode-toggle');
 const body = document.querySelector('body');
 
-
 modeToggle.addEventListener('click', () => {
   body.classList.toggle('dark-mode');
   if (body.classList.contains('dark-mode')) {

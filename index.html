@@ -9,25 +9,29 @@
 
 </head>
 <body>
-  <nav class="navbar">
-    <div class="container">
+  <div class="container">
+    <div class="navbar">
       <div class="logo">
-        <a href="#">H<span class="boldText"> O. </span></a>
-      </div>
-      <ul class="menu">
+      <a href="#">H<span class="boldText"> O. </span></a>
+    </div>
+    <nav>
+      <ul id="menuList">
         <li><a href="#Home">Home</a></li>
         <li><a href="#About">About</a></li>
         <li><a href="#Skills">Japanese Level</a></li>
         <li><a href="#Skills2">Skills</a></li>
         <li><a href="#Contact">Contact</a></li>
         <li><a href="JP.html">日本語</a></li>
-      </ul>
+      </ul></nav>
       <div id="mode-toggle" class="mode-toggle">
         <i class="fas fa-moon"></i>
         <i class="fas fa-sun"></i>
       </div>
+      <div class="toggle_btn" onclick="togglemenu()">
+        <i class="fa fa-bars"></i>
+      </div>
     </div>
-  </nav>
+  </div>
 <main>
   <!--home-->
   <section class="home" id="Home">
@@ -36,7 +40,7 @@
         <h3>Hello, I'm Hikaru.</h3>
         <p>I am a <span class="multiText">Front-End Developer.</span></p>
       </div>
-      <div class="area" >
+      <div class="area">
         <ul class="circles">
                 <li></li>
                 <li></li>
@@ -158,7 +162,8 @@
   </section>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
-  <script src="script.js"></script>
+  <script src="script.js">
+  </script>
 </main>
 </body>
 </html>

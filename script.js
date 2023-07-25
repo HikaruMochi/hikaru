@@ -1,6 +1,16 @@
-const menu = document.querySelector('.menu');
-const modeToggle = document.querySelector('#mode-toggle');
-const body = document.querySelector('body');
+const modeToggle = document.getElementById('mode-toggle');
+const body = document.body;
+var menuList = document.getElementById('menuList');
+menuList.style.maxHeight = "0px";
+function togglemenu() {
+if(menuList.style.maxHeight == "0px")
+{
+menuList.style.maxHeight = "200px"
+}
+else {
+menuList.style.maxHeight = "0px"
+}
+}
 
 modeToggle.addEventListener('click', () => {
   body.classList.toggle('dark-mode');

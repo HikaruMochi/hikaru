@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Exo:400,700');
 
 :root {
-  --primary-color: 	white;
-  --secondary-color:#28282B;
+  --primary-color:  white;
+  --secondary-color: #28282B;
   --tertiary-color: black;
   --quarter-color: #8B4000;
   --fifth-color: black;
@@ -14,19 +14,24 @@ body {
   margin: 0;
 }
 
-.navbar {
-  background-color: var(--secondary-color);
-  color: white;
-  padding: 10px 0;
+.container {
+  width: 100%;
+  max-height: 120px;
+  box-sizing: border-box;
 }
 
-.container {
+.navbar {
+  padding-left: 50px;
+  padding-right:50px;
+  background-color: var(--secondary-color);
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 0 20px;
+}
+
+.logo {
+  width: 50px;
+  cursor: pointer;
+  margin: 30px 0;
 }
 
 .logo a {
@@ -36,24 +41,12 @@ body {
   font-size: 24px;
 }
 
-.menu {
-  display: flex;
-  list-style-type: none;
-}
-
-.menu li {
-  margin-left: 20px;
-}
-
-.menu li a {
+.navbar .toggle_btn {
+  padding-left: 10px;
   color: white;
-  text-decoration: none;
-  font-size: 16px;
-  transition: color 0.3s ease;
-}
-
-.menu li a:hover {
-  color: #ffcc00;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
 }
 
 .mode-toggle {
@@ -68,11 +61,60 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.mode-toggle i {
-  font-size: 18px;
-  margin: 0 5px;
+nav{
+  flex: 1;
+  text-align: right;
 }
 
+nav ul li {
+  list-style: none;
+  display: inline-block;
+  margin-right: 30px;
+}
+
+nav ul li a{
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+}
+
+nav ul li a:hover {
+  color: orangered;
+}
+
+@media screen and (max-width: 700px){
+  .container {
+    justify-content: space-between;
+  }
+
+  .menuList{
+    display: none;
+  }
+
+  nav ul{
+    width: 100%;
+    background: var(--secondary-color);
+    position: absolute;
+    top: 75px;
+    right: 0;
+    z-index: 2;
+  }
+  nav ul li {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .navbar .toggle_btn {
+    display: block;
+  }
+
+  #menuList {
+    padding-right: 10px;
+    overflow: hidden;
+    transition: 0.5%;
+  }
+}
 
 .dark-mode {
   --primary-color: #28282B; /* Dark blue theme color */
@@ -106,28 +148,28 @@ body {
 }
 
 .hero-text p {
-  font-size:2vw;
+  font-size: 3vw;
   color: var(--tertiary-color);
 }
 
 .multiText {
   text-transform: uppercase;
 }
-.area{
-  background: var(--primary-color);  
-  background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);  
+
+.area {
+  background: var(--primary-color);
+  background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
   width: 100%;
-  height: 90vh;
+  height: 70vh;
 }
 
-.circles{
+.circles {
   position: absolute;
   width: 100%;
   height: 100%;
- 
 }
 
-.circles li{
+.circles li {
   position: absolute;
   display: block;
   list-style: none;
@@ -136,7 +178,6 @@ body {
   background: var(--tertiary-color);
   animation: animate 25s linear infinite;
   bottom: -150px;
-  
 }
 
 .circles li:nth-child(1){
@@ -181,14 +222,14 @@ body {
   left: 75%;
   width: 110px;
   height: 110px;
-  animation-delay: 3s;
+  animation-delay: 1s;
 }
 
 .circles li:nth-child(7){
   left: 35%;
-  width: 150px;
-  height: 150px;
-  animation-delay: 7s;
+  width: 30px;
+  height: 30px;
+  animation-delay: 0s;
 }
 
 .circles li:nth-child(8){
@@ -245,21 +286,21 @@ body {
 
 .about-left {
   width: 30%;
- float: left;
+  float: left;
 }
 
-.container3 h1{
+.about-right {
+  width: 50%;
+  float: left;
+}
+
+.container3 h1 {
   font-size: 4rem;
   text-shadow: 3px 1px var(--tertiary-color);
 }
 
 .ch {
   color: orangered;
-}
-
-.about-right {
-  width: 50%;
-  float: left;
 }
 
 .container3 p {
@@ -273,7 +314,6 @@ body {
 }
 
 .skills-left {
- 
   width: 50%;
   display: block;
 }
@@ -291,6 +331,7 @@ body {
 .skills h1 {
   font-size: 3rem;
 }
+
 .skills h1, h4 {
   color: var(--tertiary-color);
   text-align: left;
@@ -302,12 +343,12 @@ body {
   background-color: black;
 }
 
-.speaking{
+.speaking {
   width: 85%;
 }
 
 .reading {
-  width:70%;
+  width: 70%;
 }
 
 .writing {
@@ -317,10 +358,10 @@ body {
 .skills-right {
   width: 50%;
   font-weight: bold;
-  color:var(--fifth-color);
+  color: var(--fifth-color);
 }
 
-.skills-right p{
+.skills-right p {
   justify-content: center;
   align-items: center;
   width: 90%;
@@ -333,12 +374,13 @@ body {
   margin: 0 auto;
 }
 
-.area2{
-  background: var(--quarter-color);  
-  background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);  
+.area2 {
+  background: var(--quarter-color);
+  background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
   width: 100%;
   height: 60vh;
 }
+
 .container5 {
   background-color: var(--secondary-color);
   color: white;
@@ -349,6 +391,7 @@ body {
 }
 
 .skills-img {
+  position: relative;
   display: inline-block;
   transition: all .2s ease-in-out; 
 }
@@ -356,7 +399,6 @@ body {
 .tooltip {
   position:relative;
   display: inline-block;
-  border-bottom: 1px dotted black;
 }
 
 .tooltip .tooltiptext {
@@ -367,8 +409,6 @@ body {
   text-align: center;
   border-radius: 6px;
   padding: 5px 0;
-
-  /* Position the tooltip */
   position: absolute;
   z-index: 1;
 }
@@ -404,11 +444,91 @@ body {
   font-size: 2rem;
   color: white;
 }
+
 .email-icon h2 {
   font-size: 1.5rem;
 }
+
 .fa-envelope {
   font-size: 3rem;
 }
 
+@media screen and (max-width: 700px) {
 
+  .hero-text h3 {
+    font-size: 8vw;
+  }
+
+  .hero-text p {
+    font-size: 3vw;
+  }
+
+  .container3 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-left, .about-right {
+    width: 90%;
+    text-align: center;
+  }
+
+  .container3 p {
+    text-align: justify;
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .container3 h1 {
+    font-size: 3rem;
+  }
+
+  .container4, .speaking, .reading, .writing {
+    width: 80%;
+  }
+
+  .skills h1 {
+    font-size: 1.5rem;
+  }
+
+  .skills-right {
+    width: 50%;
+    text-align: justify;
+  }
+
+  .skills-right p {
+    font-size: 1rem;
+  }
+  .container5 h1 {
+    font-size: 2rem;
+  }
+
+  .container6 h1 {
+    font-size: 1.5rem;
+  }
+
+  .skills-img img {
+    width: 50%;
+  }
+
+  .tooltip .tooltiptext{
+    visibility: hidden;
+  }
+
+  .tooltip:hover .tooltiptext {
+    visibility: hidden;
+  }
+
+  .email-icon h2 {
+    font-size: 1rem;
+    margin: 10px;
+  }
+
+  .fa-envelope {
+    font-size: 2rem;
+  }
+
+  .circles li {
+    bottom: -60px;
+  }
+}
